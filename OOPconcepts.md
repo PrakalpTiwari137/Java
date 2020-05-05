@@ -37,3 +37,54 @@ class TestStudent1{
     }  
 }
 ```
+<br/>**Constructor Overloading in Java:** In Java, a constructor is just like a method but without return type. It can also be overloaded like Java methods.<br/>
+Constructor overloading in Java is a technique of having more than one constructor with different parameter lists.
+```java
+class Student5{  
+    int id;  
+    String name;  
+    int age;  
+    //creating two arg constructor  
+    Student5(int i,String n){  
+        id = i;  
+        name = n;  
+    }  
+    //creating three arg constructor  
+    Student5(int i,String n,int a){  
+        id = i;  
+        name = n;  
+        age=a;  
+    }
+}
+```
+### Java Static keyword
+The static can be:<br/>
+1. Variable (also known as a class variable)<br/>
+2. Method (also known as a class method)<br/>
+3. Block<br/>
+4. Nested class<br/>
+
+**1. Static variable:** The static variable can be used to refer to the common property of all objects (which is not unique for each object), for example, the company name of employees, college name of students, etc. The static variable gets memory only once in the class area at the time of class loading.<br/><br/>
+**2. Static method:** A static method belongs to the class rather than the object of a class. A static method can be invoked without the need for creating an instance of a class. A static method can access static data member and can change the value of it.<br/>
+```java
+//Java Program to demonstrate the use of a static method.  
+class Student{  
+     int rollno;  
+     String name;  
+     static String college = "ITS";  
+     //static method to change the value of static variable  
+     static void change(){  
+        college = "BBDIT";  
+     }    
+}  
+public class TestStaticMethod{  
+    public static void main(String args[]){  
+    Student.change();   //calling change method  
+    Student s1 = new Student();    
+}  
+```
+**Note:** There are two main restrictions for the static method. They are:<br/>
+1. The static method can not use non static data member or call non-static method directly.<br/>
+2. this and super cannot be used in static context.<br/><br/>
+
+
