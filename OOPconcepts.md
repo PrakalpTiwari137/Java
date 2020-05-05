@@ -205,4 +205,62 @@ class BabyDog1 extends Dog{
 
 <br/><br/>
 
-## 
+## Java instanceof
+The java instanceof operator is used to test whether the object is an instance of the specified type (class or subclass or interface). An object of subclass type is also a type of parent class.<br/>
+
+
+<br/><br/>
+
+## Abstract class in Java
+A class which is declared with the abstract keyword is known as an abstract class in Java. It can have abstract and non-abstract methods.<br/>
+Abstraction lets you focus on what the object does instead of how it does it.<br/>
+
+**Ways to achieve Abstraction**<br/>
+1. Abstract class (0 to 100%)<br/>
+2. Interface (100%)<br/><br/>
+
+**Note:**
+1. An abstract class must be declared with an abstract keyword.<br/>
+2. It can have abstract and non-abstract methods.<br/>
+3. It cannot be instantiated.<br/>
+4. It can have constructors and static methods also.<br/>
+5.It can have final methods which will force the subclass not to change the body of the method.<br/><br/>
+
+```java
+abstract class Bike{  
+    Bike(){System.out.println("bike is created");}  
+    abstract void run();  
+    void changeGear(){System.out.println("gear changed");}  
+}  
+//Creating a Child class which inherits Abstract class  
+class Honda extends Bike{  
+    void run(){System.out.println("running safely..");}  
+}  
+//Creating a Test class which calls abstract and non-abstract methods  
+class TestAbstraction2{  
+    public static void main(String args[]){  
+        Bike obj = new Honda();  
+        obj.run();  
+        obj.changeGear();  
+    }  
+} 
+```
+**Note:** If you are extending an abstract class that has an abstract method, you must either provide the implementation of the method or make this class abstract.<br/><br/>
+
+## Interface in Java
+An interface is declared by using the interface keyword. It provides total abstraction; means all the methods in an interface are declared with the empty body, and all the fields are public, static and final by default. A class that implements an interface must implement all the methods declared in the interface.<br/>
+Interface fields are public, static and final by default, and the methods are public and abstract.<br/>
+```java
+interface Bank{  
+    float rateOfInterest();  
+}  
+class SBI implements Bank{  
+    public float rateOfInterest(){return 9.15f;}  
+}  
+class TestInterface2{  
+    public static void main(String[] args){  
+        Bank b=new SBI();  
+        System.out.println("ROI: "+b.rateOfInterest());  
+    }
+}
+```
