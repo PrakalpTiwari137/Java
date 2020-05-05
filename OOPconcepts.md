@@ -121,9 +121,41 @@ class Student{
         m(this);  
     }
     
-    // To return current class instance
+    // 5. To return current class instance
     Student getStudent(){  
         return this;  
     }  
 }  
 ```
+
+<br/><br/>
+
+## Inheritance
+```java
+class Subclass-name extends Superclass-name  
+{  
+   //methods and fields  
+}  
+```
+### Aggregation
+```java
+class Operation{  
+    int square(int n){  
+        return n*n;  
+    }  
+}  
+
+class Circle{  
+    Operation op;//aggregation  
+    double pi = 3.14;  
+
+    double area(int radius){  
+        op=new Operation();  
+        int rsquare = op.square(radius);  //code reusability 
+        return pi*rsquare;  
+    }
+}
+```
+
+<br/><br/>
+
