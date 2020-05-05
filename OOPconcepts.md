@@ -159,3 +159,50 @@ class Circle{
 
 <br/><br/>
 
+## Method Overriding
+Rules for Java Method Overriding:<br/>
+1. The method must have the same name as in the parent class.<br/>
+2. The method must have the same parameter as in the parent class.<br/>
+3. There must be an IS-A relationship (inheritance).<br/>
+```java
+class Bank{  
+    int getRateOfInterest(){return 0;}  
+}  
+//Creating child classes.  
+class SBI extends Bank{  
+    int getRateOfInterest(){return 8;}  
+}  
+  
+class ICICI extends Bank{  
+    int getRateOfInterest(){return 7;}  
+}
+```
+<br/>**Why can we not override static method?**<br/>
+It is because the static method is bound with class whereas instance method is bound with an object. Static belongs to the class area, and an instance belongs to the heap area.<br/><br/>
+
+## Runtime polymorphism
+Runtime polymorphism or Dynamic Method Dispatch is a process in which a call to an overridden method is resolved at runtime rather than compile-time.<br/>
+In this process, an overridden method is called through the reference variable of a superclass. The determination of the method to be called is based on the object being referred to by the reference variable.<br/>
+If the reference variable of Parent class refers to the object of Child class, it is known as **upcasting**.<br/>
+```java
+class Animal{  
+    void eat(){
+        System.out.println("animal is eating...");
+    }  
+}  
+class Dog extends Animal{  
+    void eat(){
+        System.out.println("dog is eating...");
+    }    
+}  
+class BabyDog1 extends Dog{  
+    public static void main(String args[]){  
+        Animal a=new BabyDog1();  
+        a.eat();    // output: Dog is eating 
+    }
+}
+```
+
+<br/><br/>
+
+## 
