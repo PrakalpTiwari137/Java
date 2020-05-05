@@ -87,4 +87,43 @@ public class TestStaticMethod{
 1. The static method can not use non static data member or call non-static method directly.<br/>
 2. this and super cannot be used in static context.<br/><br/>
 
-
+### this keyword in Java
+Usage:
+```java
+class Student{  
+    int rollno;  
+    String name;  
+    float fee;  
+    // 1. To refer current class instance variable
+    Student(int rollno,String name,float fee){  
+        this.rollno=rollno;  
+        this.name=name;  
+        this.fee=fee;  
+    }
+    
+    // 2. To invoke current class method
+    void m(){System.out.println("hello m");} 
+    this.m();
+    
+    // 3. To invoke current class constructor 
+    // used in constructor chaining
+    Student(int rollno,String name,String course,float fee){  
+        this(rollno,name,course);//reusing constructor  
+        this.fee=fee;  
+    }  
+    
+    // 4. To pass as an argument in the method
+    // mainly used in event handling
+    void m(Student obj){  
+        System.out.println("method is invoked");  
+    }  
+    void p(){  
+        m(this);  
+    }
+    
+    // To return current class instance
+    Student getStudent(){  
+        return this;  
+    }  
+}  
+```
